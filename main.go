@@ -4,13 +4,13 @@ import (
 	"fmt"
 	"strings"
 )
+
 const conferenceTickets = 50
 var conferenceName = "Go Conference"
 var remainingTickets = 50
 var bookings [] string
 
 func main() {
-
 
 	greetUsers()
 
@@ -41,7 +41,6 @@ func main() {
 		}
 }
 
-
 func greetUsers()  {
 	fmt.Println("Welcome to our users in the conference!")
 	fmt.Printf("Welcome to %v booking application\n",conferenceName)
@@ -59,15 +58,6 @@ func printFirstNames() [] string {
 	}
 
 	return firstNames
-}
-
-func validatUserInput(firstName string,lastName string,email string,userTickets int) (bool,bool,bool) {
-	
-	isValideName := len(firstName) >= 2 && len(lastName) >=2
-	isValidEmail := strings.Contains(email,"@")
-	isValidTicketNumber := userTickets > 0 && userTickets <= remainingTickets
-
-	return isValideName, isValidEmail, isValidTicketNumber
 }
 
 func getUserInput() (string, string, string, int) {
