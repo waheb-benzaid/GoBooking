@@ -2,12 +2,13 @@ package main
 
 import (
 	"fmt"
+	"go-booking/helper"
 	"strings"
 )
 
 const conferenceTickets = 50
 var conferenceName = "Go Conference"
-var remainingTickets = 50
+var RemainingTickets = 50
 var bookings [] string
 
 func main() {
@@ -18,7 +19,7 @@ func main() {
 		//Ask the user for his information
 		firstName, lastName, email, userTickets:= getUserInput()
 		
-		isValideName, isValidEmail, isValidTicketNumber := validatUserInput(firstName, lastName, email, userTickets)
+		isValideName, isValidEmail, isValidTicketNumber := helper.ValidatUserInput(firstName, lastName, email, userTickets,RemainingTickets)
 
 		if isValideName && isValidEmail && isValidTicketNumber {
 
@@ -44,7 +45,7 @@ func main() {
 func greetUsers()  {
 	fmt.Println("Welcome to our users in the conference!")
 	fmt.Printf("Welcome to %v booking application\n",conferenceName)
-	fmt.Printf("We have total of %v tickets and %v are still available\n", conferenceTickets, remainingTickets)
+	fmt.Printf("We have total of %v tickets and %v are still available\n", conferenceTickets, RemainingTickets)
 	fmt.Println("Get your tocket here to attend!")
 }
 
@@ -82,8 +83,8 @@ func getUserInput() (string, string, string, int) {
 }
 
 func bookTicket ( userTickets int, firstName string, lastName string, email string )  {
-	remainingTickets = remainingTickets - userTickets
+	RemainingTickets = RemainingTickets - userTickets
 	bookings = append(bookings, firstName + " " + lastName)
 	fmt.Printf("Thank you %v %v for booking %v tickets. You will receive a confirmation email at %v \n", firstName, lastName, userTickets,email)
-	fmt.Printf("%v tickets remaining for %v\n",remainingTickets, conferenceName)
+	fmt.Printf("%v tickets remaining for %v\n",RemainingTickets, conferenceName)
 }
