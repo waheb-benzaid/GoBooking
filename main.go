@@ -15,6 +15,7 @@ func main() {
 	var lastName string
 	var email string
 	var userTickets int
+
 	//Ask the user for his information
 	fmt.Println("Enter your First Name")
 	fmt.Scan(&firstName)
@@ -28,5 +29,9 @@ func main() {
 	fmt.Println("Enter the number of tickets")
 	fmt.Scan(&userTickets)
 
+	remainingTickets = remainingTickets - userTickets
+
 	fmt.Printf("Thank you %v %v for booking %v tickets. You will receive a confirmation email at %v \n", firstName, lastName, userTickets,email)
+
+	fmt.Printf("%v tickets remaining for %v\n",remainingTickets, conferenceName)
 }
