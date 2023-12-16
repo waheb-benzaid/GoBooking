@@ -26,7 +26,7 @@ func main() {
 			bookTicket (userTickets, firstName, lastName, email)
 
 			firstNames := printFirstNames()
-			fmt.Printf("The first names of boking are: %v\n",firstNames)
+			fmt.Printf("The list of names of boking are: %v\n",firstNames)
 
 			}else{
 				if !isValideName {
