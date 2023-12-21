@@ -36,7 +36,7 @@ func main() {
 					fmt.Println("Email does not contain @")
 				}
 				if !isValidTicketNumber {
-					fmt.Println("Number of tickets invalid!")
+					fmt.Println("Invalid number of tickets")
 				}
 			}
 		}
@@ -48,6 +48,7 @@ func greetUsers()  {
 	fmt.Printf("We have total of %v tickets and %v are still available\n", conferenceTickets, remainingTickets)
 	fmt.Println("Get your tocket here to attend!")
 }
+
 
 func printFirstNames() [] string {
 	
